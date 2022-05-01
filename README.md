@@ -86,7 +86,7 @@ This starter project exposes three endpoints, two are public and one requires au
 
 ### Private endpoint
 
-To access the private endpoint, you need to get the token from the authntication call and supply it in the authorisation header. 
+To access the private endpoint, you need to get the token from the authentication call and supply it in the authorisation header. 
 
 `Authorization Bearer eyJhbGciOiJIU...`
 
