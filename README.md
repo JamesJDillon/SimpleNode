@@ -152,8 +152,29 @@ Below is a general description of the structure of the project, role of the conf
 | **prisma** | The prisma database schema, sqlite database and seed files. |
 | **src/index.ts** | The server file that kicks everything off.
 | **src/controllers** | The files that handle the processing of requests. |
-| **src/misc** | Helper functions, namely around role and authenticatio validation. |
+| **src/misc** | Helper functions, namely around role and authentication validation. |
 | **src/routes** | The files that route the requests to the appropriate controllers (request handlers) |
 | **src/types** | Custom type definitions. |
 
 
+## License
+
+        Copyright (c) 2022 James Dillon
+
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+        DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+        OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
+        OR OTHER DEALINGS IN THE SOFTWARE.
