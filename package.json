@@ -7,8 +7,7 @@
     "deploy": "npx prisma migrate deploy",
     "generate": "npx prisma generate",
     "dev": "nodemon --exec npx ts-node ./src/index.ts",
-    "prod": "node .",
-    "migrate": "./node_modules/.bin/node-pg-migrate",
+    "prod": "npx ts-node ./src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "prisma": {

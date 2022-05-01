@@ -28,7 +28,6 @@ const registerValidation = [
 
 class AuthController {
   static async login(req: Request, res: Response) {
-    console.log(req.body);
     const { email, password } = req.body;
 
     try {
@@ -72,7 +71,6 @@ class AuthController {
         message: 'Incorrect username or password.',
       });
     } catch (e) {
-      console.log(e);
       return res.status(500).json({
         success: false,
         message: 'Oops, something went wrong.',

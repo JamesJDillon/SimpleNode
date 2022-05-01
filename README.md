@@ -12,7 +12,109 @@ The libraries and technologies used are:
 * **Prisma** *(ORM)*
 * **SQLite** *(database)*
 
-## Running
+## Getting up and running
+
+You can try cloning and running the project with this one-liner.
+
+**UNIX-like**:
+
+`git clone https://github.com/JamesJDillon/SimpleNode.git && cd SimpleNode && npm i && mv .env.example .env && npx prisma migrate dev && npm run dev`
+
+**Windows**:
+
+`git clone https://github.com/JamesJDillon/SimpleNode.git && cd SimpleNode && npm i && rename .env.example .env && npx prisma migrate dev && npm run dev`
+
+Or, if that doesn't work you can try running the steps below individually.
+
+
+**1. Cloning the project.**
+
+`git clone https://github.com/JamesJDillon/SimpleNode.git`
+
+**2. Navigate into the folder**
+
+`cd SimpleNode`
+
+**3. Install dependencies**
+
+`npm i`
+
+**4. Set up environment variables.**
+
+For UNIX-like OS's, use:
+
+`mv .env.example .env`
+
+For Windows, use:
+
+`rename .env.example .env`
+
+*[Make sure to change the secret in this file!]*
+
+**5. Generate and seed database.**
+
+`npx prisma migrate dev`
+
+
+**6. Run the project.**
+
+`npm run dev`
+
+OR
+
+`npm run prod`
+
+---
+
+## Using the API
+
+This starter project exposes three endpoints, two are public and on requires authentication to access.
+
+### Public
+
+| Method      | URL     | Body     | Description     |
+| ----------- | ----------- | ----------- | ----------- |
+| POST | /v1/api/auth/register | {"email": "","password": ""} | Registers a new user account. |
+| POST | /v1/api/auth/ | {"email": "","password": ""} | Authenticates a an existing account. |
+
+### Private
+
+To access the private route, you need to get the token from the authntication call and supply it in the authorisation header. 
+
+`Authorization Bearer eyJhbGciOiJIU...`
+
+| Method      | URL     | Description     |
+| ----------- | ----------- | ----------- |
+| GET | /v1/api/user/ | Returns the currently authenticated user. |
+
+### Example API calls
+
+The project includes a Postman collection file (`SimpleNode.postman_collection.json`). You can import this into Postman and use it to see example calls.
+
+For those who don't use Postman, here are some example cURL calls.
+
+**Registering**
+
+    curl --location --request POST 'http://localhost:5000/v1/api/auth/register' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "email": "new@example.com",
+        "password": "new"
+    }`
+
+**Authenticating**
+
+    curl --location --request POST 'http://localhost:5000/v1/api/auth/' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "email": "admin@example.com",
+        "password": "admin"
+    }'
+
+**Get Authenticated User**
+
+    curl --location --request GET 'http://localhost:5000/v1/api/user/' \
+    --header 'Authorization: Bearer eyJhbGc...'
 
 
 ## Structure
@@ -28,9 +130,8 @@ The libraries and technologies used are:
 | **nodemon.json** | Contains project dependencies, scripts etc. |
 | **README.md** | You're reading it right now. Very meta. |
 | **tsconfig.json** | Contains Typescript configurations. |
+| **SimpleNode.postman_collection.json** | Can be imported to Postman to see the API calls. |
 
-
----
 
 ### Folder Structure
 
