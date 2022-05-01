@@ -1,6 +1,3 @@
-// /* eslint-disable no-console */
-// /* eslint-disable no-await-in-loop */
-// /* eslint-disable no-plusplus */
 import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt';
 
