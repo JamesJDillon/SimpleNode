@@ -16,7 +16,7 @@ The libraries and technologies used are:
 
 You can try cloning and running the project with this one-liner.
 
-**UNIX-like**:
+**UNIX/Linux**:
 
 `git clone https://github.com/JamesJDillon/SimpleNode.git && cd SimpleNode && npm i && mv .env.example .env && npx prisma migrate dev && npm run dev`
 
@@ -41,7 +41,7 @@ Or, if that doesn't work you can try running the steps below individually.
 
 **4. Set up environment variables.**
 
-For UNIX-like OS's, use:
+For UNIX/Linux OS's, use:
 
 `mv .env.example .env`
 
@@ -68,18 +68,25 @@ OR
 
 ## Using the API
 
-This starter project exposes three endpoints, two are public and on requires authentication to access.
+This starter project exposes three endpoints, two are public and one requires authentication to access. There are also two users, one having the "ADMIN" role and the other being a "USER". 
 
-### Public
+### Users
+
+| Email      | Password     | Role     |
+| ----------- | ----------- | ----------- |
+| user@example.com | user | USER |
+| admin@example.com | admin | ADMIN |
+
+### Public endpoints
 
 | Method      | URL     | Body     | Description     |
 | ----------- | ----------- | ----------- | ----------- |
 | POST | /v1/api/auth/register | {"email": "","password": ""} | Registers a new user account. |
 | POST | /v1/api/auth/ | {"email": "","password": ""} | Authenticates a an existing account. |
 
-### Private
+### Private endpoint
 
-To access the private route, you need to get the token from the authntication call and supply it in the authorisation header. 
+To access the private endpoint, you need to get the token from the authntication call and supply it in the authorisation header. 
 
 `Authorization Bearer eyJhbGciOiJIU...`
 
@@ -118,6 +125,9 @@ For those who don't use Postman, here are some example cURL calls.
 
 
 ## Structure
+
+Below is a general description of the structure of the project, role of the configuration files and the layout of the folders.
+
 
 ### Config Structure
 
